@@ -1,0 +1,54 @@
+---
+title: Tarea II Seaborn
+author: Alisson Badilla Mora
+format: 
+    pdf: 
+        geometry: margin=1in
+        fontsize: 10pt
+---
+
+## Librerias ##
+
+``` {python}
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+```
+
+## Ruta ##
+
+``` {python}
+ruta = pd.read_excel("C:/Users/usuario/Downloads/Superstore.xlsx")
+```
+
+## Grafico Categorico ##
+
+``` {python}
+
+sns.catplot(data=ruta, x='Region',y='Sales', kind='strip', hue='Category', col='Segment')
+plt.title('Grafico Categorico Region por Sales')
+``` 
+
+## Grafico Relacional ##
+
+``` {python}
+fig,ax=plt.subplots(figsize=(10,8))
+sns.scatterplot(data=ruta, x='Region', y='Profit')
+ax.tick_params(axis='both', which='major', labelsize=12)
+ax.set_xlabel('Region', fontsize=12)
+plt.title('Grafico Relacional Region por Profit')
+```
+
+## Grafico Distribucion ##
+
+``` {python}
+sns.displot(data=ruta,x='Quantity')
+plt.title('Grafico de distibucion Quantity')
+```
+
+
+## Reflexion final ##
+``` {text}
+Durante este aprendizaje tuve que hacer la eliminacion de la memoria, extensiones porque no aparecia la funcion de quarto, ádemas de esto la instalacion de una nueva extension para poder transportar el archivo a pdf
+Realmente no tenia mucho conocimiento del uso de visual, con seaborn se me hizo bastante familiar con matplotlib
+```
